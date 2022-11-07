@@ -1,5 +1,5 @@
 import { getRectangleArea, getRectangleInfo, getRectanglePerimeter } from '../js/rectangle';
-import {expect, jest, test} from '@jest/globals';
+import { expect, test } from '@jest/globals';
 import { getLog } from 'jest-console';
 
 test('should output rectangle perimeter', () => {
