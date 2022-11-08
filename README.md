@@ -10,7 +10,6 @@
 ### Dependencies
 - Using babel.js
 - jest
-- Using jest-console for mocking console in jest https://npm.io/package/jest-console
 
 ### Tests
 - Rectangle perimeter test checks if the math of perimeter function works correctly and outputs expected result.

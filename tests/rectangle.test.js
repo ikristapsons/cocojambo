@@ -1,6 +1,5 @@
 import { getRectangleArea, getRectangleInfo, getRectanglePerimeter } from '../js/rectangle';
 import { expect, test } from '@jest/globals';
-import { getLog } from 'jest-console';
 
 test('should output rectangle perimeter', () => {
     const perimeter = getRectanglePerimeter(15, 5);
@@ -12,7 +11,15 @@ test('should output rectangle area', () => {
     expect(area).toBe(75);
 });
 
-test('should provide info about rectangle', () => {
-    const info = getRectangleInfo(15, 5);
-    expect(getLog(info).log).toBe("The perimeter of a rectangle is 40 and the area is 75");
+// Mock to see what the console outputs in rectangleInfo + 
+jest.spyOn(console, 'log');
+
+test("getRectangleInfo outputs info correctly", () => {
+    getRectangleInfo(15,5);
+    expect(console.log.mock.calls[0][0]).toBe("The perimeter of a rectangle is 40 and the area is 75");
+});
+
+// Clearing mocks
+afterEach(() => {
+    jest.clearAllMocks();
 });
